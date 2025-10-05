@@ -60,5 +60,5 @@ class TestBurger:
             i += 1
             assert ingrt.name in receipt_strs[i]
 
-        assert burger.bun.name in receipt_strs[i + 1]
-        assert str(burger.get_price()) in receipt_strs[i + 3]
+        assert f"(==== {burger.bun.name} ====)" == receipt_strs[i + 1]
+        assert f"Price: {burger.get_price()}" == receipt_strs[i + 3]
